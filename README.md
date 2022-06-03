@@ -57,7 +57,7 @@ I used Apple MVC default pattern in terms of its simplicity and it fits well cur
 ![LandscapePreview](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654296449.gif "Landscape preview")
 
 - **Improve error handling** at SaliencyAnalyserService.
-  1. [getSaliencyCoordinates](https://github.com/Neestackich/SpottingScope/blob/1fd6b0d94d8217e1849ff877a567fc3ee32168cf/SpottingScope/SpottingScope/Services/SaliencyAnalyser/SaliencyAnalyserService.swift#L21)
+1. [getSaliencyCoordinates](https://github.com/Neestackich/SpottingScope/blob/1fd6b0d94d8217e1849ff877a567fc3ee32168cf/SpottingScope/SpottingScope/Services/SaliencyAnalyser/SaliencyAnalyserService.swift#L21)
   SaliensyService could return SaliencyServiceResult entity wich holds coordinates or service error. Pseudocode: 
   
   ```swift
@@ -72,7 +72,7 @@ I used Apple MVC default pattern in terms of its simplicity and it fits well cur
     }
   ```
 
-  3. [getSalientObjects](https://github.com/Neestackich/SpottingScope/blob/1fd6b0d94d8217e1849ff877a567fc3ee32168cf/SpottingScope/SpottingScope/Services/SaliencyAnalyser/SaliencyAnalyserService.swift#L42)
+2. [getSalientObjects](https://github.com/Neestackich/SpottingScope/blob/1fd6b0d94d8217e1849ff877a567fc3ee32168cf/SpottingScope/SpottingScope/Services/SaliencyAnalyser/SaliencyAnalyserService.swift#L42)
   Method getSalientObjects can throw error to higher level instead of returning empty value. Pseudocode:
   
   ```swift
