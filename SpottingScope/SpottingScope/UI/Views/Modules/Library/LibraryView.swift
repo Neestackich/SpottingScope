@@ -164,13 +164,17 @@ private extension LibraryView {
             case .success(_):
                 self?.loadUsersLibraryPhotos()
             case .failure(let error):
-                self?.processAuthorizationError(error)
+                DispatchQueue.main.async {
+                    self?.processAuthorizationError(error)
+                }
             }
         }
     }
 
     private func loadUsersLibraryPhotos() {
-        showActivityIndicator(true)
+        DispatchQueue.main.async { [weak self] in
+            self?.showActivityIndicator(true)
+        }
 
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             self?.photosService.loadUsersLibraryAssets()
