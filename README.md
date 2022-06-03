@@ -59,35 +59,35 @@ I used Apple MVC default pattern in terms of its simplicity and it fits well cur
 - **Improve error handling** at SaliencyAnalyserService.
 1. [getSaliencyCoordinates](https://github.com/Neestackich/SpottingScope/blob/1fd6b0d94d8217e1849ff877a567fc3ee32168cf/SpottingScope/SpottingScope/Services/SaliencyAnalyser/SaliencyAnalyserService.swift#L21)
   SaliensyService could return SaliencyServiceResult entity wich holds coordinates or service error. Pseudocode: 
-  
-  ```swift
-    func getSaliencyCoordinates(for image: UIImage) -> SaliencyServiceResult {
-        guard let cgImage = image.cgImage else {
-            return SaliencyServiceResult(error: .cgImageError)
+
+      ```swift
+        func getSaliencyCoordinates(for image: UIImage) -> SaliencyServiceResult {
+            guard let cgImage = image.cgImage else {
+                return SaliencyServiceResult(error: .cgImageError)
+            }
+
+            let salientObjects = getSalientObjects(for: cgImage)
+
+            return SaliencyServiceResult(coordinates: computeSaliencyCoordinates(for: image, with: salientObjects))
         }
-
-        let salientObjects = getSalientObjects(for: cgImage)
-
-        return SaliencyServiceResult(coordinates: computeSaliencyCoordinates(for: image, with: salientObjects))
-    }
-  ```
+      ```
 
 2. [getSalientObjects](https://github.com/Neestackich/SpottingScope/blob/1fd6b0d94d8217e1849ff877a567fc3ee32168cf/SpottingScope/SpottingScope/Services/SaliencyAnalyser/SaliencyAnalyserService.swift#L42)
   Method getSalientObjects can throw error to higher level instead of returning empty value. Pseudocode:
   
-  ```swift
-    private func getSalientObjects(for cgImage: CGImage) throws -> VNRectangleObservation {
-        let saliencyRequest = VNGenerateAttentionBasedSaliencyImageRequest(completionHandler: nil)
-        let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-        try requestHandler.perform([saliencyRequest])
+      ```swift
+        private func getSalientObjects(for cgImage: CGImage) throws -> VNRectangleObservation {
+            let saliencyRequest = VNGenerateAttentionBasedSaliencyImageRequest(completionHandler: nil)
+            let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+            try requestHandler.perform([saliencyRequest])
 
-        guard let result = saliencyRequest.results?.last, let observation = result.salientObjects?.last else {
-            throw SaliencyAnalyserServiceError.emptyResult
+            guard let result = saliencyRequest.results?.last, let observation = result.salientObjects?.last else {
+                throw SaliencyAnalyserServiceError.emptyResult
+            }
+
+            return observation
         }
-
-        return observation
-    }
-  ```
+      ```
 
 - **Improve authorization handling**. Current app version doesn't support handling of case when user didn't select any images from library.
 ![LandscapePreview](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654298080.gif "Landscape preview")
