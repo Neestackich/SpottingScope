@@ -7,15 +7,6 @@ UICollectionView-based photos library and saliency analyser written in Swift
 [![Architechture](http://img.shields.io/badge/architechture-MVC-indigo.svg?style=flat)]([https://developer.apple.com/swift](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html))            
 
 
-<div align="center">
-<sub>Built with ❤︎ by
-Victor Agibaylov
-</sub>
-</div>
-<br />
-<br />
-
-
 ## Preview
 Below you can see several gifs providing you a better view of application functionality.
 
@@ -37,7 +28,7 @@ Below you can see several gifs providing you a better view of application functi
 ### What architectural design pattern did I use and why?
 I used Apple MVC default pattern in terms of its simplicity and it fits well current scope of modules and functions.
 
-![](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Art/model_view_controller_2x.png)
+![mvcScheme](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Art/model_view_controller_2x.png "MVC Scheme")
 
 *******
 
@@ -48,13 +39,15 @@ I used Apple MVC default pattern in terms of its simplicity and it fits well cur
 - **Unit/UI testing** to provide great test code coverage to avoid unexpected bugs.
 - **Add pinch zoom gesture** to allow the user to zoom image with gestures on image preview screen in addition to navbar button.
 - **Handle landscape / portrait mode**. The app is only known to work well in portrait mode. Interface rotation / size classes changes are not properly supported:
+
 ![LandscapePreview](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654295587.gif "Landscape preview")
 
 - **Add localization**. Who nows, maybe this app will be popular in different countries all over the world😊
 - **Add Dependency Injection** via **Swinject**.
 - **Add Swiftlint** to provide proper Swift code style and convention enforce
 - **Animate image scaling** Switching between aspectFit and aspectFill performs abruptly at the moment. 
-![LandscapePreview](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654296449.gif "Landscape preview")
+
+![Animation](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654296449.gif "Animation preview")
 
 - **Improve error handling** at SaliencyAnalyserService.
 1. [getSaliencyCoordinates](https://github.com/Neestackich/SpottingScope/blob/1fd6b0d94d8217e1849ff877a567fc3ee32168cf/SpottingScope/SpottingScope/Services/SaliencyAnalyser/SaliencyAnalyserService.swift#L21)
