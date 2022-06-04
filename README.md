@@ -34,7 +34,7 @@ I used Apple MVC default pattern in terms of its simplicity and it fits well cur
 
 ### What would I improve if I had more time?
 
-- **Build better architechture**. First of all Apple MVC brings alot of problems to developer. In case of increase of app's functionality scope viewcontroller will have too many different responsobilities that leads to **Massive view controller**. Also it will be pretty difficult to test it properly via unit tests with mocks. **MVVM** pattern comes to our aid.
+- **Build better architechture**. First of all Apple MVC brings alot of problems to developer. In case of increase of app's functionality scope viewcontroller will have too many different responsobilities that leads to **Massive view controller**. Also it will be pretty difficult to test it properly via unit tests with mocks. **MVVM** pattern comes to our aid with proper DI built in mind.
 - **Add reactivness** to handle images loading, authorization and reliably handle data chains.
 - **Unit/UI testing** to provide great test code coverage to avoid unexpected bugs.
 - **Add pinch zoom gesture** to allow the user to zoom image with gestures on image preview screen in addition to navbar button.
@@ -43,11 +43,14 @@ I used Apple MVC default pattern in terms of its simplicity and it fits well cur
   ![LandscapePreview](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654295587.gif "Landscape preview")
 
 - **Add localization**. Who nows, maybe this app will be popular in different countries all over the world😊
-- **Add Dependency Injection** via **Swinject**.
 - **Add Swiftlint** to provide proper Swift code style and convention enforce
 - **Animate image scaling** Switching between aspectFit and aspectFill performs abruptly at the moment. 
 
   ![Animation](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654296449.gif "Animation preview")
+  
+  Also it would be cool to load low quality image first and then high quality to provide blur effect and as a result better UX
+  
+  ![blurEffect](https://raw.githubusercontent.com/dombrant/blurry-image-load/master/img/blur-effect.gif "Blur effect")
 
 - **Improve error handling** at SaliencyAnalyserService.
 1. [getSaliencyCoordinates](https://github.com/Neestackich/SpottingScope/blob/1fd6b0d94d8217e1849ff877a567fc3ee32168cf/SpottingScope/SpottingScope/Services/SaliencyAnalyser/SaliencyAnalyserService.swift#L21)
