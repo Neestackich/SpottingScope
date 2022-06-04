@@ -40,14 +40,14 @@ I used Apple MVC default pattern in terms of its simplicity and it fits well cur
 - **Add pinch zoom gesture** to allow the user to zoom image with gestures on image preview screen in addition to navbar button.
 - **Handle landscape / portrait mode**. The app is only known to work well in portrait mode. Interface rotation / size classes changes are not properly supported:
 
-![LandscapePreview](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654295587.gif "Landscape preview")
+  ![LandscapePreview](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654295587.gif "Landscape preview")
 
 - **Add localization**. Who nows, maybe this app will be popular in different countries all over the world😊
 - **Add Dependency Injection** via **Swinject**.
 - **Add Swiftlint** to provide proper Swift code style and convention enforce
 - **Animate image scaling** Switching between aspectFit and aspectFill performs abruptly at the moment. 
 
-![Animation](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654296449.gif "Animation preview")
+  ![Animation](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654296449.gif "Animation preview")
 
 - **Improve error handling** at SaliencyAnalyserService.
 1. [getSaliencyCoordinates](https://github.com/Neestackich/SpottingScope/blob/1fd6b0d94d8217e1849ff877a567fc3ee32168cf/SpottingScope/SpottingScope/Services/SaliencyAnalyser/SaliencyAnalyserService.swift#L21)
