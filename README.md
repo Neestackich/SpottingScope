@@ -87,7 +87,7 @@ I used Apple MVC default pattern in terms of its simplicity and it fits well cur
 
 - **Improve authorization handling**. Current app version doesn't support handling of case when user didn't select any images from library.
 
-![LandscapePreview](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654298080.gif "Landscape preview")
+  ![LandscapePreview](https://github.com/Neestackich/SpottingScope/blob/main/RPReplay_Final1654298080.gif "Landscape preview")
 
 *******
 
